@@ -11,7 +11,7 @@ var express = require('express'),
         max: 100000
     }),
 
-    MIN_CONFIRMATION = 1,
+    MIN_CONFIRMATION = parseInt(process.env.MIN_CONFIRMATION || "2"),
     ROOM_CLEANUP_REFRESH_PERIOD = 5 * 60 * 1000,
     ROOM_EXPIRATION_TIMEOUT = 30 * 60 * 1000,
     MAX_ROOMS_TO_RETURN = 500;
@@ -53,6 +53,7 @@ var server = app.listen(process.env.PORT || 8080, function () {
     var host = server.address().address
     var port = server.address().port
 
+    console.log("Minimum confirmation: %d", MIN_CONFIRMATION);
     console.log("Server starting http://%s:%s ...", host, port);
 });
 
