@@ -2,6 +2,11 @@
 // @match https://www.reddit.com/robin/*
 // ==/UserScript==
 
+// Instructions:
+// 	1. Go to any reddit page (preferrably https://www.reddit.com)
+// 	2. Copy and paste this script in the browser console
+// 	3. Leave the page opened
+
 setInterval(sendUpdate, 5 * 60 * 1000);
 sendUpdate();
 
