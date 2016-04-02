@@ -4,19 +4,22 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="app/css/main.css">
+    
+    <title>Robin leadboard</title>
 </head>
 
 <body ng-app="robinLeadboard" ng-controller="HomeController">
 
     <div class="layout well container">
-        <h1 style="margin-bottom: 50px;">Current leadboard</h1>
+        <h1>Current leadboard</h1>
 
         <div ng-if="!rooms.length">
             Loading rooms
         </div>
 
         <div ng-repeat="room in rooms.slice(0, 10)" class="room">
-            <h3>{{$index + 1}}. {{room.id}}</h3>
+            <div class="index">{{$index + 1}}</div>
+            <h3>{{room.id}}</h3>
 
             <div class="more_info">
                 <i class="glyphicon glyphicon-user"></i> <span>{{room.participants}}</span>
@@ -28,6 +31,17 @@
 
             <hr>
         </div>
+        
+        <footer>
+            <p>
+                <a href="https://github.com/colin-dumitru/robin-tracker" target="_blank">Learn how to contribute with data.</a>
+            </p>
+            
+            <p>
+                Project is hosted on <a href="https://github.com/colin-dumitru/robin-tracker">GitHub</a>.
+            </p>
+            
+        </footer>
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
