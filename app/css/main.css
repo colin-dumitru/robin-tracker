@@ -1,0 +1,14 @@
+body {
+    padding-top: 20px;
+    background-color: #E6E6E6;
+}
+.room h3 {
+    word-break: break-all;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.room .more_info {
+    color: grey;
+}
