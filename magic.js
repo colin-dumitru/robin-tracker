@@ -1,6 +1,7 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
+    cors = require('cors'),
 
     pg = require('pg'),
     client = new pg.Client(process.env.DATABASE_URL),
@@ -16,6 +17,7 @@ var express = require('express'),
     MAX_ROOMS_TO_RETURN = 500;
 
 app.use(bodyParser.json());
+app.use(cors());
 
 client.connect(function (err) {
     if (err) throw err;
